@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Burger Hub</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="loader">
+    <h1>🍔 Burger Hub</h1>
+</div>
+
+<nav>
+
+<h2>Burger Hub</h2>
+
+<ul id="nav-links">
+
+<li><a href="#home">Home</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<div class="cart">
+🛒 <span id="cart-count">0</span>
+</div>
+
+<div class="cart-total">
+Total ₹<span id="total-price">0</span>
+</div>
+
+<div class="menu-btn">&#9776;</div>
+
+</nav>
+
+<section id="home" class="hero reveal">
+
+<h1>Fresh Burgers Everyday 🍔</h1>
+
+<p>Delicious Food | Fast Delivery | Best Taste</p>
+
+<button onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+Order Now
+</button>
+
+</section>
+
+<section id="menu" class="menu reveal">
+
+<h2>Our Menu</h2>
+
+<input type="text" id="search" placeholder="🔍 Search Burger...">
+
+<div class="menu-container">
+
+<div class="card">
+
+<img src="burger1.jpg" alt="Cheese Burger">
+
+<h3>Cheese Burger</h3>
+
+<p>₹149</p>
+
+<button class="order-btn" data-price="149">Order</button>
+
+<div class="quantity">
+
+<button class="minus">-</button>
+
+<span>1</span>
+
+<button class="plus">+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="burger2.jpg" alt="Chicken Burger">
+
+<h3>Chicken Burger</h3>
+
+<p>₹199</p>
+
+<button class="order-btn" data-price="199">Order</button>
+
+<div class="quantity">
+
+<button class="minus">-</button>
+
+<span>1</span>
+
+<button class="plus">+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="burger3.jpg" alt="Double Burger">
+
+<h3>Double Burger</h3>
+
+<p>₹249</p>
+
+<button class="order-btn" data-price="249">Order</button>
+
+<div class="quantity">
+
+<button class="minus">-</button>
+
+<span>1</span>
+
+<button class="plus">+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="fries1.jpg" alt="French Fries">
+
+<h3>French Fries</h3>
+
+<p class="rating">⭐⭐⭐⭐⭐ (4.8)</p>
+
+<p>₹99</p>
+
+<button class="order-btn" data-price="99">Order</button>
+
+<div class="quantity">
+
+<button class="minus">-</button>
+
+<span>1</span>
+
+<button class="plus">+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="drink1.jpg" alt="Coca Cola">
+
+<h3>Coca-Cola</h3>
+
+<p class="rating">⭐⭐⭐⭐⭐ (4.9)</p>
+
+<p>₹79</p>
+
+<button class="order-btn" data-price="79">Order</button>
+
+<div class="quantity">
+
+<button class="minus">-</button>
+
+<span>1</span>
+
+<button class="plus">+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div style="text-align:center; margin-top:30px;">
+
+<button onclick="showPopup()" class="checkout-btn">
+
+🛒 Checkout
+
+</button>
+
+</div>
+
+</section>
+  <section id="reviews" class="reviews reveal">
+
+<h2>Customer Reviews</h2>
+
+<div class="card">
+⭐⭐⭐⭐⭐<br><br>
+"Best Burger in Town!"<br>
+- Rahul
+</div>
+
+<div class="card">
+⭐⭐⭐⭐⭐<br><br>
+"Fast Delivery & Amazing Taste!"<br>
+- Priya
+</div>
+
+<div class="card">
+⭐⭐⭐⭐⭐<br><br>
+"Highly Recommended!"<br>
+- Aman
+</div>
+
+</section>
+
+<section class="featured reveal">
+
+<h2>Featured Items</h2>
+
+<div class="food-container">
+
+<div class="food-card">
+
+<img src="burger1.jpg" alt="Classic Burger">
+
+<span class="badge">BEST SELLER</span>
+
+<span class="heart">🤍</span>
+
+<h3>Classic Burger</h3>
+
+<p class="rating">⭐⭐⭐⭐⭐ (4.9)</p>
+
+<p>₹149</p>
+
+<button class="order-btn" data-price="149">Order</button>
+
+</div>
+
+<div class="food-card">
+
+<img src="fries.jpg" alt="French Fries">
+
+<span class="badge">BEST SELLER</span>
+
+<span class="heart">🤍</span>
+
+<h3>French Fries</h3>
+
+<p class="rating">⭐⭐⭐⭐⭐ (4.9)</p>
+
+<p>₹99</p>
+
+<button class="order-btn" data-price="99">Order</button>
+
+</div>
+
+<div class="food-card">
+
+<img src="drink.jpg" alt="Cold Drink">
+
+<span class="badge">BEST SELLER</span>
+
+<span class="heart">🤍</span>
+
+<h3>Cold Drink</h3>
+
+<p class="rating">⭐⭐⭐⭐⭐ (4.9)</p>
+
+<p>₹79</p>
+
+<button class="order-btn" data-price="79">Order</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stats reveal">
+
+<div class="stat">
+<h2>50K+</h2>
+<p>Happy Customers</p>
+</div>
+
+<div class="stat">
+<h2>120+</h2>
+<p>Food Items</p>
+</div>
+
+<div class="stat">
+<h2>25</h2>
+<p>Branches</p>
+</div>
+
+<div class="stat">
+<h2>4.9★</h2>
+<p>Customer Rating</p>
+</div>
+
+</section>
+  <section id="contact" class="contact reveal">
+
+<h2>Contact Us</h2>
+
+<form>
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<textarea placeholder="Your Message" rows="5" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<div class="socials">
+
+📷 Instagram | 👍 Facebook | ▶️ YouTube
+
+</div>
+
+<h2>Burger Hub 🍔</h2>
+
+<p>Fresh Food | Fast Delivery | Best Taste</p>
+
+<p>© 2026 Burger Hub. All Rights Reserved.</p>
+
+</footer>
+
+<a href="#home" class="floating-btn">⬆ Top</a>
+
+<div id="popup" class="popup">
+
+<div class="popup-box">
+
+<h2>🎉 Order Placed!</h2>
+
+<p>Your delicious food is on the way 🚀🍔</p>
+
+<button onclick="closePopup()">OK</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

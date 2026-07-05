@@ -1,0 +1,618 @@
+/* ===== PART 1 ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#111;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 40px;
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(12px);
+    z-index:1000;
+}
+
+nav h2{
+    color:#FFD700;
+    font-size:30px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#FFD700;
+}
+
+.menu-btn{
+    display:none;
+    font-size:30px;
+    color:#FFD700;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url("hero.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h1{
+    font-size:58px;
+    color:#FFD700;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+.hero button,
+.hero-btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:#FFD700;
+    color:#111;
+    border:none;
+    border-radius:35px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.hero button:hover,
+.hero-btn:hover{
+    transform:scale(1.08);
+    background:#00bfff;
+    color:#fff;
+}
+
+/* ================= MENU ================= */
+
+.menu{
+    padding:90px 20px;
+    text-align:center;
+}
+
+.menu h2{
+    color:#FFD700;
+    font-size:42px;
+    margin-bottom:25px;
+}
+
+#search{
+    width:90%;
+    max-width:420px;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    margin:20px auto 40px;
+    display:block;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    nav{
+        padding:15px 20px;
+    }
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:75px;
+        right:15px;
+        width:220px;
+        background:#111;
+        border-radius:15px;
+        padding:20px;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+}
+/* ===== PART 2 ===== */
+
+/* ================= MENU CARDS ================= */
+
+.menu-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.card{
+    width:300px;
+    background:#1a1a1a;
+    border:2px solid #FFD700;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 12px 30px rgba(255,215,0,.35);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+    margin-bottom:15px;
+    transition:.35s;
+}
+
+.card:hover img{
+    transform:scale(1.05);
+}
+
+.card h3{
+    margin:10px 0;
+    font-size:24px;
+}
+
+.card p{
+    font-size:18px;
+    margin:8px 0;
+}
+
+.rating{
+    color:#FFD700;
+    font-size:15px;
+}
+
+.order-btn{
+    margin-top:10px;
+    background:#FFD700;
+    color:#111;
+    padding:12px 22px;
+    border:none;
+    border-radius:30px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.order-btn:hover{
+    background:#00bfff;
+    color:#fff;
+}
+
+/* ================= QUANTITY ================= */
+
+.quantity{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-top:15px;
+}
+
+.quantity button{
+    width:38px;
+    height:38px;
+    border:none;
+    border-radius:50%;
+    background:#FFD700;
+    color:#111;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ================= FEATURED ================= */
+
+.featured{
+    padding:90px 20px;
+    text-align:center;
+}
+
+.food-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+}
+
+.food-card{
+    position:relative;
+    width:300px;
+    background:#1a1a1a;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.food-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 12px 30px rgba(255,215,0,.35);
+}
+
+.food-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.food-card h3{
+    margin:15px 0 10px;
+}
+
+.food-card p{
+    margin-bottom:10px;
+}
+
+.badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:#ff3b30;
+    color:#fff;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.heart{
+    position:absolute;
+    top:15px;
+    right:15px;
+    font-size:28px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.heart:hover{
+    transform:scale(1.2);
+}
+
+/* ================= REVIEWS ================= */
+
+.reviews{
+    padding:90px 20px;
+    text-align:center;
+}
+
+.reviews h2{
+    color:#FFD700;
+    font-size:40px;
+    margin-bottom:30px;
+}
+
+.reviews .card{
+    border-left:5px solid #FFD700;
+}
+/* ===== PART 3 ===== */
+
+/* ================= STATS ================= */
+
+.stats{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+    padding:80px 20px;
+    background:#FFD700;
+}
+
+.stat{
+    width:220px;
+    background:#fff;
+    color:#111;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    transition:.3s;
+}
+
+.stat:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.stat h2{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    padding:90px 20px;
+    text-align:center;
+}
+
+.contact h2{
+    color:#FFD700;
+    font-size:40px;
+    margin-bottom:30px;
+}
+
+.contact form{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+}
+
+.contact input,
+.contact textarea{
+    width:90%;
+    max-width:450px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+}
+
+.contact textarea{
+    resize:none;
+    height:140px;
+}
+
+.contact button{
+    background:#FFD700;
+    color:#111;
+    padding:14px 35px;
+    border:none;
+    border-radius:30px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ================= CART ================= */
+
+.cart{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#FFD700;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.cart-total{
+    color:#FFD700;
+    font-size:16px;
+    font-weight:bold;
+}
+
+/* ================= CHECKOUT ================= */
+
+.checkout-btn{
+    display:block;
+    margin:40px auto;
+    padding:15px 35px;
+    background:#FFD700;
+    color:#111;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.checkout-btn:hover{
+    background:#00bfff;
+    color:#fff;
+}
+
+/* ================= POPUP ================= */
+
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,.75);
+    z-index:9999;
+}
+
+.popup-box{
+    width:90%;
+    max-width:360px;
+    background:#1a1a1a;
+    color:#fff;
+    border:2px solid #FFD700;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+}
+
+.popup-box h2{
+    color:#FFD700;
+    margin-bottom:15px;
+}
+
+.popup-box p{
+    margin-bottom:20px;
+}
+
+.popup-box button{
+    background:#FFD700;
+    color:#111;
+    border:none;
+    padding:12px 28px;
+    border-radius:30px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#000;
+    text-align:center;
+    padding:50px 20px;
+}
+
+footer h2{
+    color:#FFD700;
+    margin-bottom:15px;
+}
+
+footer p{
+    color:#bbb;
+    margin:8px 0;
+}
+
+.socials{
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+/* ================= LOADER ================= */
+
+#loader{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#111;
+    z-index:99999;
+}
+
+#loader h1{
+    color:#FFD700;
+    font-size:42px;
+    animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+    100%{transform:scale(1);}
+}
+
+/* ================= SCROLL ANIMATION ================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(70px);
+    transition:.8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ================= FLOATING ORDER BUTTON ================= */
+
+.floating-btn{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    background:#FFD700;
+    color:#111;
+    text-decoration:none;
+    padding:15px 22px;
+    border-radius:40px;
+    font-weight:bold;
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+    transition:.3s;
+    z-index:999;
+}
+
+.floating-btn:hover{
+    transform:scale(1.08);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+    .menu-container,
+    .food-container,
+    .stats{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card,
+    .food-card,
+    .stat{
+        width:90%;
+        max-width:340px;
+    }
+
+    .cart-total{
+        display:none;
+    }
+
+}
+
+    
+    
+
